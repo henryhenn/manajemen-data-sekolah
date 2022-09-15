@@ -33,7 +33,7 @@ export default function Authenticated({ auth, header, children, app_logo }) {
                                 <NavLink href={route('karyawan.index')} active={route().current('karyawan.*')}>
                                     Data Karyawan
                                 </NavLink>
-                                <NavLink href={route('inventaris.index')} active={route().current('inventaris.*')}>
+                                <NavLink href={route('sarpras.index')} active={route().current('sarpras.*')}>
                                     Data Inventaris
                                 </NavLink>
                             </div>
@@ -115,7 +115,7 @@ export default function Authenticated({ auth, header, children, app_logo }) {
                         <ResponsiveNavLink href={route('karyawan.index')} active={route().current('karyawan.*')}>
                             Data Karyawan
                         </ResponsiveNavLink>
-                        <ResponsiveNavLink href={route('inventaris.index')} active={route().current('inventaris.*')}>
+                        <ResponsiveNavLink href={route('sarpras.index')} active={route().current('sarpras.*')}>
                             Data Inventaris
                         </ResponsiveNavLink>
                     </div>

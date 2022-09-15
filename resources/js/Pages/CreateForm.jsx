@@ -255,7 +255,7 @@ const FormKaryawan = props => {
     )
 }
 
-const FormInventaris = props => {
+const FormSarpras = props => {
     const {data, setData, post, processing, errors} = useForm({
         nama: '',
         jumlah: '',
@@ -266,13 +266,13 @@ const FormInventaris = props => {
 
     const submitForm = e => {
         e.preventDefault()
-        post(route('inventaris.store'))
+        post(route('sarpras.store'))
     }
 
     return (
         <div>
             <DashboardLayout props={props}>
-                <Head title="Tambah Data Inventaris"/>
+                <Head title="Tambah Data Sarpras"/>
 
                 <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div className="p-6 bg-white border-b border-gray-200">
@@ -292,7 +292,7 @@ const FormInventaris = props => {
                                         <label htmlFor="telpon" className="block mb-3">Jumlah</label>
                                         <input type="text" value={data.jumlah}
                                                id="telpon"
-                                               placeholder="Masukkan Jumlah Inventaris"
+                                               placeholder="Masukkan Jumlah Sarpras"
                                                onChange={(jumlah) => setData('jumlah', jumlah.target.value)}
                                                className="input block input-bordered input-primary w-full max-w-xs"/>
                                         {errors.jumlah && <small className="text-red-500">{errors.jumlah}</small>}
@@ -301,7 +301,7 @@ const FormInventaris = props => {
                                         <label htmlFor="alamat" className="block mb-3">Harga Satuan</label>
                                         <input type="text" value={data.harga_satuan}
                                                id="telpon"
-                                               placeholder="Masukkan Harga Satuan Inventaris"
+                                               placeholder="Masukkan Harga Satuan Sarpras"
                                                onChange={(harga) => setData('harga_satuan', harga.target.value)}
                                                className="input block input-bordered input-primary w-full max-w-xs"/>
                                         {errors.harga_satuan && <small className="text-red-500">{errors.harga_satuan}</small>}
@@ -320,7 +320,7 @@ const FormInventaris = props => {
                                         <label htmlFor="alamat" className="block mb-3">Status</label>
                                         <input type="text" value={data.status}
                                                id="telpon"
-                                               placeholder="Masukkan Status Inventaris"
+                                               placeholder="Masukkan Status Sarpras"
                                                onChange={(status) => setData('status', status.target.value)}
                                                className="input block input-bordered input-primary w-full max-w-xs"/>
                                         {errors.status && <small className="text-red-500">{errors.status}</small>}
@@ -345,7 +345,7 @@ export default function CreateForm(props) {
         return FormGuru(props)
     } else if (route().current('karyawan.create')) {
         return FormKaryawan(props)
-    } else if (route().current('inventaris.create')) {
-        return FormInventaris(props);
+    } else if (route().current('sarpras.create')) {
+        return FormSarpras(props);
     }
 }

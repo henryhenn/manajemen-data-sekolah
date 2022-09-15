@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Guru;
-use App\Models\Inventaris;
+use App\Models\Sarpras;
 use App\Models\Siswa;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
     {
         Siswa::factory(100)->create();
         Guru::factory(100)->create();
-        Inventaris::factory(50)->create();
+        Sarpras::factory(50)->create();
         $this->call(KelasSeeder::class);
 
         User::create([

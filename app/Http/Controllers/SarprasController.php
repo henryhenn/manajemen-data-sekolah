@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\InventarisRequest;
-use App\Http\Resources\InventarisResource;
-use App\Models\Inventaris;
+use App\Http\Resources\SarprasResource;
+use App\Models\Sarpras;
 
-class InventarisController extends Controller
+class SarprasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class InventarisController extends Controller
      */
     public function index()
     {
-        $inventaris = Inventaris::latest()->get();
+        $inventaris = Sarpras::latest()->get();
 
-        return inertia('Inventaris/Inventaris', compact('inventaris'));
+        return inertia('Sarpras/Sarpras', compact('inventaris'));
     }
 
     /**
@@ -38,61 +38,61 @@ class InventarisController extends Controller
      */
     public function store(InventarisRequest $request)
     {
-        Inventaris::create($request->validated());
+        Sarpras::create($request->validated());
 
-        return redirect()->route('inventaris.index')->with('message', 'Data Inventaris Berhasil Ditambahkan!');
+        return redirect()->route('sarpras.index')->with('message', 'Data Sarpras Berhasil Ditambahkan!');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param \App\Models\Inventaris $inventari
+     * @param \App\Models\Sarpras $inventari
      * @return \Illuminate\Http\Response
      */
-    public function show(Inventaris $inventari)
+    public function show(Sarpras $inventari)
     {
-        $data = new InventarisResource($inventari);
+        $data = new SarprasResource($inventari);
 
-        return inertia('Inventaris/SingleInventaris', compact('data'));
+        return inertia('Sarpras/SingleSarpras', compact('data'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Models\Inventaris $inventari
+     * @param \App\Models\Sarpras $inventari
      * @return \Illuminate\Http\Response
      */
-    public function edit(Inventaris $inventari)
+    public function edit(Sarpras $inventari)
     {
-        $inventaris = new InventarisResource($inventari);
+        $sarpras = new SarprasResource($inventari);
 
-        return inertia('Edit', compact('inventaris'));
+        return inertia('Edit', compact('sarpras'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param \App\Models\Inventaris $inventari
+     * @param \App\Models\Sarpras $inventari
      * @return \Illuminate\Http\Response
      */
-    public function update(InventarisRequest $request, Inventaris $inventari)
+    public function update(InventarisRequest $request, Sarpras $inventari)
     {
         $inventari->update($request->validated());
 
-        return redirect()->route('inventaris.index')->with('message', 'Data Inventaris Berhasil Diupdate!');
+        return redirect()->route('sarpras.index')->with('message', 'Data Sarpras Berhasil Diupdate!');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\Inventaris $inventari
+     * @param \App\Models\Sarpras $inventari
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Inventaris $inventari)
+    public function destroy(Sarpras $inventari)
     {
         $inventari->delete();
 
-        return redirect()->back()->with('message', 'Data Inventaris Berhasil Dihapus!');
+        return redirect()->back()->with('message', 'Data Sarpras Berhasil Dihapus!');
     }
 }

@@ -1,21 +1,20 @@
 import React from 'react'
 import {Head, Link} from '@inertiajs/inertia-react'
 import DashboardLayout from "@/Layouts/Dashboard"
-import DataGuru from "@/Components/DataGuru";
-import DataInventaris from "@/Components/DataInventaris";
+import DataSarpras from "@/Components/DataSarpras";
 
-export default function Inventaris(props) {
+export default function Sarpras(props) {
     return (
         <DashboardLayout props={props}>
-            <Head title="Halaman Data Inventaris"/>
+            <Head title="Halaman Data Sarana & Prasarana"/>
 
             <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div className="p-6 bg-white border-b border-gray-200">
                     <div className="flex flex-wrap justify-between">
-                        <h1 className="text-xl font-semibold">Data Inventaris</h1>
+                        <h1 className="text-xl font-semibold">Data Sarana & Prasarana</h1>
 
-                        <Link href={route('inventaris.create')} className="p-3 w-auto text-white rounded-md bg-blue-500 hover:bg-blue-700 ease-in-out duration-150">
-                            Tambah Data Inventaris
+                        <Link href={route('sarpras.create')} className="p-3 w-auto text-white rounded-md bg-blue-500 hover:bg-blue-700 ease-in-out duration-150">
+                            Tambah Data Sarana & Prasarana
                         </Link>
                     </div>
 
@@ -34,7 +33,7 @@ export default function Inventaris(props) {
                         </>
                     ) : ""}
 
-                    <DataInventaris data={props} />
+                    <DataSarpras data={props} />
                 </div>
             </div>
         </DashboardLayout>

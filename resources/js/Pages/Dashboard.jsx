@@ -4,7 +4,7 @@ import DashboardLayout from "@/Layouts/Dashboard";
 import DataSiswa from "@/Components/DataSiswa";
 import DataGuru from "@/Components/DataGuru";
 import DataKaryawan from "@/Components/DataKaryawan";
-import DataInventaris from "@/Components/DataInventaris";
+import DataSarpras from "@/Components/DataSarpras";
 
 export default function Dashboard(props) {
     return (
@@ -73,10 +73,10 @@ export default function Dashboard(props) {
                         <div className="collapse-title text-xl font-semibold">
                             Data Inventaris
                             <div className="collapse-content">
-                                <DataInventaris data={props}/>
+                                <DataSarpras data={props}/>
 
                             </div>
-                            <Link href={route('inventaris.index')}
+                            <Link href={route('sarpras.index')}
                                   className="text-sm mt-4 block text-blue-500 hover:text-blue-700 ease-in-out duration-200">Lihat
                                 Data Selengkapnya
                             </Link>

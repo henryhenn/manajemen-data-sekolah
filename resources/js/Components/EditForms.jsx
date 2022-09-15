@@ -232,7 +232,7 @@ const EditFormKaryawan = ({karyawan}) => {
     )
 }
 
-const EditFormInventaris = ({inventaris}) => {
+const EditFormSarpras = ({inventaris}) => {
     const {data, setData, put, processing, errors} = useForm({
         nama: inventaris.inventaris.nama,
         jumlah: inventaris.inventaris.jumlah,
@@ -243,12 +243,12 @@ const EditFormInventaris = ({inventaris}) => {
 
     const submitForm = e => {
         e.preventDefault()
-        put(route('inventaris.update', inventaris.inventaris.id))
+        put(route('sarpras.update', inventaris.inventaris.id))
     }
 
     return (
         <div>
-            <h1 className="text-xl font-semibold">Edit Data Inventaris: {inventaris.inventaris.nama}</h1>
+            <h1 className="text-xl font-semibold">Edit Data Sarpras: {inventaris.inventaris.nama}</h1>
 
             <form onSubmit={submitForm} className="space-y-6">
                 <div className="grid sm:grid-cols-1 md:grid-cols-2">
@@ -266,7 +266,7 @@ const EditFormInventaris = ({inventaris}) => {
                             <label htmlFor="telpon" className="block mb-3">Jumlah</label>
                             <input type="text" value={data.jumlah}
                                    id="telpon"
-                                   placeholder="Masukkan Jumlah Inventaris"
+                                   placeholder="Masukkan Jumlah Sarpras"
                                    onChange={(jumlah) => setData('jumlah', jumlah.target.value)}
                                    className="input block input-bordered input-primary w-full max-w-xs"/>
                             {errors.jumlah && <small className="text-red-500">{errors.jumlah}</small>}
@@ -275,7 +275,7 @@ const EditFormInventaris = ({inventaris}) => {
                             <label htmlFor="alamat" className="block mb-3">Harga Satuan</label>
                             <input type="text" value={data.harga_satuan}
                                    id="telpon"
-                                   placeholder="Masukkan Harga Satuan Inventaris"
+                                   placeholder="Masukkan Harga Satuan Sarpras"
                                    onChange={(harga) => setData('harga_satuan', harga.target.value)}
                                    className="input block input-bordered input-primary w-full max-w-xs"/>
                             {errors.harga_satuan && <small className="text-red-500">{errors.harga_satuan}</small>}
@@ -294,7 +294,7 @@ const EditFormInventaris = ({inventaris}) => {
                             <label htmlFor="alamat" className="block mb-3">Status</label>
                             <input type="text" value={data.status}
                                    id="telpon"
-                                   placeholder="Masukkan Status Inventaris"
+                                   placeholder="Masukkan Status Sarpras"
                                    onChange={(status) => setData('status', status.target.value)}
                                    className="input block input-bordered input-primary w-full max-w-xs"/>
                             {errors.status && <small className="text-red-500">{errors.status}</small>}
@@ -313,6 +313,6 @@ export {
     EditFormSiswa,
     EditFormGuru,
     EditFormKaryawan,
-    EditFormInventaris,
+    EditFormSarpras,
 }
 

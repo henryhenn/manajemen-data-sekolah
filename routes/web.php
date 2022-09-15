@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GuruController;
-use App\Http\Controllers\InventarisController;
+use App\Http\Controllers\SarprasController;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\SiswaController;
 use Illuminate\Foundation\Application;
@@ -32,7 +32,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('/siswa', SiswaController::class);
     Route::resource('/guru', GuruController::class);
     Route::resource('/karyawan', KaryawanController::class);
-    Route::resource('/inventaris', InventarisController::class);
+    Route::resource('/sarpras', SarprasController::class);
 });
 
 require __DIR__ . '/auth.php';
